@@ -9,7 +9,7 @@ const ContactRow = ({name, subtitle, onPress, style}) => {
       <View style={styles.avatar}>
         <Text style={styles.avatarLabel}>
           {name
-            .split(' ')
+            .split('')
             .reduce((prev, current) => `${prev}${current[0]}`, ' ')}
         </Text>
       </View>

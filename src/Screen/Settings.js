@@ -10,8 +10,8 @@ const Settings = () => {
   return (
     <View>
       <ContactRow
-        name="Hebibe"
-        subtitle="asdfgjskksks@jhgjdsksk.com"
+        name="Habibe"
+        subtitle="me@habibe.com"
         style={styles.contratRow}
       />
       <Separator />

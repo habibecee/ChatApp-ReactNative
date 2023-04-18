@@ -4,6 +4,25 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ContactRow from '../Companents/ContactRow';
 import Separator from '../Companents/Separator';
 
+const chats = [
+  {
+    users: ['me@habibe.com', 'a@mail.com'],
+    messages: [],
+  },
+  {
+    users: ['me@habibe.com', 'b@mail.com'],
+    messages: [],
+  },
+  {
+    users: ['me@habibe.com', 'c@mail.com'],
+    messages: [],
+  },
+  {
+    users: ['me@habibe.com', 'd@mail.com'],
+    messages: [],
+  },
+];
+
 const Chats = ({navigation}) => {
   useEffect(() => {
     const isLoggedIn = false;
@@ -13,32 +32,31 @@ const Chats = ({navigation}) => {
     }
   }, []);
 
+  // useEffect(() => {
+  //   firebase
+  //     .firestore()
+  //     .collection('chats')
+  //     .onSnapshot(snapshot => {
+  //       console.warn(snapshot.docs);
+  //     });
+  // }, []);
+
   return (
     <SafeAreaView>
-      <ContactRow
-        name="Hamçenaz"
-        subtitle="Röraydın matruşkalarım 👻"
-        onPress={() => Alert.alert('Hey')}
-      />
-      <Separator />
-      <ContactRow
-        name="Dasue"
-        subtitle="Urfalı zeynoooo, mardinli zeynoo 💃🏼"
-        onPress={() => Alert.alert('Hey')}
-      />
-      <Separator />
-      <ContactRow
-        name="Hilili"
-        subtitle="Merhaba oyuncak bebeklerim 🌸 "
-        onPress={() => Alert.alert('Hey')}
-      />
-      <Separator />
-      <ContactRow
-        name="Heyel"
-        subtitle="Onları ben doğurdum yiyemezsiniz 😏"
-        onPress={() => Alert.alert('Hey')}
-      />
-      <Separator />
+      {chats.map((chat, index) => (
+        <React.Fragment key={index}>
+          {/* <ContactRow
+            name={chat.users.find(
+              x => x !== firebase.auth().currentUser?.email,
+            )}
+            subtitle="No message yet!"
+            onPress={() => {
+              navigation.navigate('Chat');
+            }}
+          /> */}
+          <Separator />
+        </React.Fragment>
+      ))}
     </SafeAreaView>
   );
 };

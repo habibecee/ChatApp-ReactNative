@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text, SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -9,6 +8,7 @@ import {colors} from './src/Config/constants';
 import Chats from './src/Screen/Chats';
 import Settings from './src/Screen/Settings';
 import SignUp from './src/Screen/SignUp';
+import Chat from './src/Screen/Chat';
 
 const ChatsStack = createNativeStackNavigator();
 
@@ -16,6 +16,7 @@ const ChatsScreen = () => {
   return (
     <ChatsStack.Navigator>
       <ChatsStack.Screen name="Chats" component={Chats} />
+      <ChatsStack.Screen name="Chat" component={Chat} />
     </ChatsStack.Navigator>
   );
 };
